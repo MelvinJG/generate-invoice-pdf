@@ -1,6 +1,9 @@
 # File ENV
 .env
 
+# Carp ./build
+build/
+
 # Logs
 logs
 *.log
