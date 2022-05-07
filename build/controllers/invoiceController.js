@@ -14,15 +14,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InvoiceController = void 0;
 const databaseConexion_1 = __importDefault(require("../databaseConexion"));
+const pdf2base64 = require('pdf-to-base64');
 class invoiceController {
     generatePDF(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const responseDB = yield databaseConexion_1.default.promise().query('SELECT * FROM t_Example');
-                res.json({
-                    "Code": "200",
-                    "Status": "OPERATION_SUCCESSFUL",
-                    "data": responseDB[0]
+                console.log(req.body);
+                yield databaseConexion_1.default.promise().query('INSERT INTO t_Registros SET?', [req.body]);
+                pdf2base64("src/sample.pdf").then((response) => {
+                    //pdf2base64("http://www.africau.edu/images/default/sample.pdf").then((response: any) => {
+                    res.json({
+                        "Code": "200",
+                        "Status": "OPERATION_SUCCESSFUL",
+                        "pdfResponse": response
+                    });
+                }).catch((error) => {
+                    res.json({
+                        "Code": "500",
+                        "Status": "PDF_ERROR",
+                        "pdfResponse": error
+                    });
                 });
             }
             catch (err) {
