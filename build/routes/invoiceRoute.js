@@ -9,6 +9,7 @@ class indexRoutes {
     }
     config() {
         this.router.post('/generatePDF', invoiceController_1.InvoiceController.generatePDF);
+        this.router.get('/exampleInvoice', invoiceController_1.InvoiceController.exampleInvoice);
     }
 }
 const IndexRoutes = new indexRoutes();

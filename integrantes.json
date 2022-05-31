@@ -1,0 +1,31 @@
+{
+    "Curso": "Ingenieria de Software",
+    "Grupo": "Numero 2",
+    "Integrantes": [
+        {
+            "Integrante": "Num_1",
+            "Nombre": "Marco Polo Ventura Santa Cruz",
+            "Carnet": "0910-10-15211"
+        },
+        {
+            "Integrante": "Num_2",
+            "Nombre": "Bryan Iván González Jiménez",
+            "Carnet": "1290-18-6335"
+        },
+        {
+            "Integrante": "Num_3",
+            "Nombre": "Diego Alejandro López Figueroa",
+            "Carnet": "1290-16-14799"
+        },
+        {
+            "Integrante": "Num_4",
+            "Nombre": "Erick Alexander Sebaquijay Iquic",
+            "Carnet": "0910-15-21835"
+        },
+        {
+            "Integrante": "Num_5",
+            "Nombre": "Melvin Misael Joj Gil",
+            "Carnet": "0910-18-1946"
+        }
+    ]
+}

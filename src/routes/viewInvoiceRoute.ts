@@ -1,7 +1,6 @@
 import { Router } from 'express';
 
-import { InvoiceController } from '../controllers/invoiceController';
-
+import { ViewInvoiceController } from '../controllers/viewInvoiceController';
 class indexRoutes{
 
     public router: Router = Router();
@@ -11,8 +10,7 @@ class indexRoutes{
     }
 
     config(): void{        
-        this.router.post('/generatePDF', InvoiceController.generatePDF);
-        this.router.get('/exampleInvoice', InvoiceController.exampleInvoice);
+        this.router.get('/generateViewPDF', ViewInvoiceController.genereateViewInvoice);
     }
 }
 
